@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sai Sriyan" />
+    <meta name="description" content="A greeting card generator program." />
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dxcywxeqq/image/upload/v1722855215/rax07ycokzd2rneo24bc.png">
+    <title>Greeting Card Generator</title>
+    <style>
+      .icon {
+        width: 60px;
+      }
+      @font-face{
+      font-family: 'mainFont';
+      src:url('https://res.cloudinary.com/dxcywxeqq/raw/upload/v1723123945/Quicksand-VariableFont_wght_zlccbi.ttf');
+      }
+      body {
+        font-size: 62.5%;
+        background-color: black;
+        color: white;
+        font-size: 1.6rem;
+        text-align: center;
+        font-family: "mainFont", sans-serif;
+      }
+      button {
+        font-size: 1.2rem;
+      }
+      footer {
+        font-size: 1.25rem;
+      }
+      input {
+        font-size: 1.3rem;
+      }
+      .greetingCard {
+        border: 2px solid whitesmoke;
+        display: none;
+      }
+      h1{
+        text-decoration: underline;
+      }
+      header{
+        color: rgba(154, 255, 21, 0.918);
+      }
+      summary{
+        color: rgb(0, 255, 170);
+        text-decoration: underline;
+      }
+      .message, .name{
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Greeting Card Generator</h1></header>
+    <p>
+    <details>
+    <summary>How to use</summary> <br>
+    Enter the following details given below and click on Generate Greeting Card button. <br>
+    If you want to edit any text, go to the corresponding detail you want to edit, make your changes and click on Generate Greeting Card button to update the card. <br><br>
+    Take a screenshot of your card and share! Hope you enjoy this program! 
+  </details>
+</p>
+<hr>
+    <main>
+      Background Color:
+      <input type="color" class="bgcolor" />
+      <br>
+      Heading Color:
+      <input type="color" class="headColor" />
+      <br>
+      Name Color:
+      <input type="color" class="nameColor" />
+      <br />
+      Heading:
+      <input type="text" class="header"/> <br />
+      Content: <input type="text" class="text1"/> <br />
+      Content: <input type="text" class="text2"/>
+      &NewLine;(line 2) <br />
+      Your Name: <input type="text" class="yourName"/>
+      <br /><br />
+      <button class="generateButton" onclick="generateGreetingCard()">
+        Generate Greeting Card
+      </button>
+      <br /><br />
+      <div class="greetingCard">
+        <center>
+          <p>
+            <h1 class="heading">head</h1>
+          </p>
+          <p class="content1">content</p>
+          <p class="content2">content</p>
+          <span class="message">With love, from</span>
+          <p class="name">Sriyan</p>
+        </center>
+      </div>
+    </main>
+    <br />
+    <hr />
+    <footer>&copy;Copyright, Sai Sriyan Nakka. 
+      <br />Version 1.2</footer>
+    <script>
+      function generateGreetingCard() {
+        //values:
+        let bgColor = document.querySelector(".bgcolor").value;
+        let headColor = document.querySelector(".headColor").value;
+        let nameColor = document.querySelector(".nameColor").value;
+        let header = document.querySelector(".header").value;
+        let text1 = document.querySelector(".text1").value;
+        let text2 = document.querySelector(".text2").value;
+        let yourName = document.querySelector(".yourName").value;
+        
+        console.log(bgColor);
+        console.log(headColor);
+        console.log(nameColor);
+        console.log(header);
+        console.log(text1);
+        console.log(text2);
+        console.log(yourName);
+        
+        //greeting card values:
+        let greetingCardDiv = document.querySelector(".greetingCard");
+        let heading = document.querySelector(".heading");
+        let content1 = document.querySelector(".content1");
+        let content2 = document.querySelector(".content2");
+        let message= document.querySelector(".message");
+        let name = document.querySelector(".name");
+        
+        //printing the values:
+        greetingCardDiv.style.display = "block";
+        greetingCardDiv.style.backgroundColor = bgColor;
+        heading.style.color = headColor;
+        heading.innerHTML = header;
+        content1.innerHTML = text1;
+        content2.innerHTML = text2;
+        message.style.color = nameColor;
+        name.style.color = nameColor;
+        name.innerHTML = yourName;
+      }
+    </script>
+  </body>
+</html>
