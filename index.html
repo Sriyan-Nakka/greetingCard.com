@@ -69,6 +69,9 @@
       Heading Color:
       <input type="color" class="headColor" />
       <br>
+      Content Color: 
+      <input type="color" class="contentColor" />
+      <br>
       Name Color:
       <input type="color" class="nameColor" />
       <br />
@@ -98,12 +101,13 @@
     <br />
     <hr />
     <footer>&copy;Copyright, Sai Sriyan Nakka. 
-      <br />Version 1.2</footer>
+      <br />Version 1.3</footer>
     <script>
       function generateGreetingCard() {
         //values:
         let bgColor = document.querySelector(".bgcolor").value;
         let headColor = document.querySelector(".headColor").value;
+        let contentColor = document.querySelector(".contentColor").value;
         let nameColor = document.querySelector(".nameColor").value;
         let header = document.querySelector(".header").value;
         let text1 = document.querySelector(".text1").value;
@@ -112,6 +116,7 @@
         
         console.log(bgColor);
         console.log(headColor);
+        console.log(contentColor);
         console.log(nameColor);
         console.log(header);
         console.log(text1);
@@ -131,7 +136,9 @@
         greetingCardDiv.style.backgroundColor = bgColor;
         heading.style.color = headColor;
         heading.innerHTML = header;
+        content1.style.color = contentColor;
         content1.innerHTML = text1;
+        content2.style.color = contentColor;
         content2.innerHTML = text2;
         message.style.color = nameColor;
         name.style.color = nameColor;
