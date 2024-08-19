@@ -49,6 +49,10 @@
       .message, .name{
         font-weight: bold;
       }
+      #watermark{
+        font-style: italic;
+        font-size: 50%;
+      }
     </style>
   </head>
   <body>
@@ -93,15 +97,18 @@
           </p>
           <p class="content1">content</p>
           <p class="content2">content</p>
-          <span class="message">With love, from</span>
-          <p class="name">Sriyan</p>
+          <span class="message">With love, from</span> <br>
+          <span class="name">Sriyan</span> <br>
+          <span id="watermark">
+            (Made using Greeting Card Generator)
+          </span>
         </center>
       </div>
     </main>
     <br />
     <hr />
     <footer>&copy;Copyright, Sai Sriyan Nakka. 
-      <br />Version 1.3</footer>
+      <br />Version 1.5</footer>
     <script>
       function generateGreetingCard() {
         //values:
@@ -113,6 +120,7 @@
         let text1 = document.querySelector(".text1").value;
         let text2 = document.querySelector(".text2").value;
         let yourName = document.querySelector(".yourName").value;
+        let watermark = document.querySelector("#watermark");
         
         console.log(bgColor);
         console.log(headColor);
@@ -142,6 +150,7 @@
         content2.innerHTML = text2;
         message.style.color = nameColor;
         name.style.color = nameColor;
+        watermark.style.color = nameColor;
         name.innerHTML = yourName;
       }
     </script>
