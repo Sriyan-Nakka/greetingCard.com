@@ -35,6 +35,7 @@
       .greetingCard {
         border: 2px solid whitesmoke;
         display: none;
+        /* width: 100px; */
       }
       h1{
         text-decoration: underline;
@@ -56,7 +57,7 @@
     </style>
   </head>
   <body>
-    <header><h1>Greeting Card Generator</h1></header>
+    <header><h1>Greeting Card Generator (Admin)</h1></header>
     <p>
     <details>
     <summary>How to use</summary> <br>
@@ -72,6 +73,9 @@
       <br>
       Heading Color:
       <input type="color" class="headColor" />
+      <br>
+      Width(in pixels): 
+      <input type="number" class="pixelWidth" min="500" max="1999"/>
       <br>
       Content Color: 
       <input type="color" class="contentColor" />
@@ -90,6 +94,7 @@
         Generate Greeting Card
       </button>
       <br /><br />
+      <center>
       <div class="greetingCard">
         <center>
           <p>
@@ -98,32 +103,33 @@
           <p class="content1">content</p>
           <p class="content2">content</p>
           <span class="message">With love, from</span> <br>
-          <span class="name">Sriyan</span> <br>
+          <span class="name">Name</span> <br>
           <span id="watermark">
             (Made using Greeting Card Generator)
           </span>
         </center>
       </div>
+    </center>
     </main>
-    <br />
     <hr />
     <footer>&copy;Copyright, Sai Sriyan Nakka. 
-      <br />Version 1.5</footer>
+      <br />Version 1.95</footer>
     <script>
       function generateGreetingCard() {
         //values:
         let bgColor = document.querySelector(".bgcolor").value;
         let headColor = document.querySelector(".headColor").value;
+        let pixelWidth = document.querySelector(".pixelWidth").value;
         let contentColor = document.querySelector(".contentColor").value;
         let nameColor = document.querySelector(".nameColor").value;
         let header = document.querySelector(".header").value;
         let text1 = document.querySelector(".text1").value;
         let text2 = document.querySelector(".text2").value;
         let yourName = document.querySelector(".yourName").value;
-        let watermark = document.querySelector("#watermark");
-        
+
         console.log(bgColor);
         console.log(headColor);
+        console.log(pixelWidth);
         console.log(contentColor);
         console.log(nameColor);
         console.log(header);
@@ -142,6 +148,7 @@
         //printing the values:
         greetingCardDiv.style.display = "block";
         greetingCardDiv.style.backgroundColor = bgColor;
+        greetingCardDiv.style.width = `${pixelWidth}px`;
         heading.style.color = headColor;
         heading.innerHTML = header;
         content1.style.color = contentColor;
@@ -150,7 +157,6 @@
         content2.innerHTML = text2;
         message.style.color = nameColor;
         name.style.color = nameColor;
-        watermark.style.color = nameColor;
         name.innerHTML = yourName;
       }
     </script>
